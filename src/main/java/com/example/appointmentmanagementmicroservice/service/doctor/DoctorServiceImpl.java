@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 //import static com.example.doctormanagementmicroservice.mapper.DoctorMapper.mappingEntitytoDTODoctor;
 
@@ -38,7 +39,7 @@ public class DoctorServiceImpl implements DoctorService {
         if (doctor.getAppointments() != null && !doctorDTO.getAppointments().isEmpty()) {
             doctor.setAppointments(doctorDTO.getAppointments().stream()
                     .map(AppointmentMapper::toEntity)
-                    .collect(java.util.stream.Collectors.toList()));
+                    .collect(Collectors.toList()));
         }
         return DoctorMapper.toDTO(doctorRepository.save(doctor));
     }

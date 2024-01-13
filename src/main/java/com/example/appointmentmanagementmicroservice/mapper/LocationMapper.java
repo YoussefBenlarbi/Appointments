@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public class LocationMapper {
 
     private static void mapToDTO(Location source, LocationDTO target) {
+        target.setLocationId(source.getLocationId());
         target.setName(source.getName());
         target.setCapacity(source.getCapacity());
         target.setFloor(source.getFloor());
@@ -16,6 +17,7 @@ public class LocationMapper {
     }
 
     private static void mapToEntity(LocationDTO source, Location target) {
+        target.setLocationId(source.getLocationId());
         target.setName(source.getName());
         target.setCapacity(source.getCapacity());
         target.setFloor(source.getFloor());

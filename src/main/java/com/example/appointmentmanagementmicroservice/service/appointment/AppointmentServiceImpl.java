@@ -50,8 +50,7 @@ public class AppointmentServiceImpl implements AppointmentService {
             }
             return AppointmentMapper.toDTO(appointment);
         } catch (EntityNotFoundException e) {
-            // Handle the exception, log the error, or return a custom error response.
-            e.printStackTrace(); // Example: Log the error
+            e.printStackTrace();
             throw new RuntimeException("Failed to create appointment. Doctor not found.");
         }
     }
